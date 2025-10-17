@@ -34,8 +34,51 @@ int main(void){
     printf("정수형 상수의 크기 : %d\n", sizeof(10));
     printf("수식의 결과값의 크기 : %d\n", sizeof(1.5 + 3.4));
     printf("char의 자료형의 크기 : %d\n", sizeof(char)); 
-    */
+    
 
+    int a = 10, b = 20;
+    if (a < 0)
+    {
+        if (b > 0)
+        {
+            printf("ok");
+        }
+    }
+    else
+    {
+        printf("ok");
+
+    }
+    */
+   int I_load = 0,  vel = 0, R = 0, V = 0, C = 0, eta = 0, E_usable = 0, p = 0, t = 0, d = 0;
    
+
+   printf("----------사전 선정 정보----------\n");
+   printf("평균전류 I_load [A] (부하측) : ");
+   scanf("%d", &I_load);
+   
+   printf("평균속도 vel [km/h] : ");
+   scanf("%d", &vel);
+
+   printf("예비율 R [0~1 : ");
+   scanf("%d", &R);
+   
+   printf("공칭전압: V [V] : ");
+   scanf("%d", &V);
+   
+   printf("용량(Capacity) C [Ah] : ");
+   scanf("%d", &R);
+   
+   printf("시스템 효율 eta [0~1] : ");
+   scanf("%d", &R);
+   E_usable = V * C * eta * (1 - R);
+   p = (V * I_load) / eta;
+   t = E_usable / p;
+   d = vel * t;
+   printf("[결과]");
+   printf("사용 가능 에너지 E_usable : %d Wh\n", E_usable);
+   printf("런타임 t : %d (365.5 min)\n", t);
+   printf("주행거리 d : %d km\n", d);
+
     return 0;
 }
